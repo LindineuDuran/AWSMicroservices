@@ -4,7 +4,7 @@
 <img src="Arquitetura do Sistema AWSMicroservices.png">
 
 🎯 **Baseado no Projeto "ComunicacaoEntreMicroservices"
-### Como fazer comunicação entre microservices usando Spring Boot, Rest API, RabbitMQ, Mysql e Redis.
+Como fazer comunicação entre microservices usando Spring Boot, Rest API, RabbitMQ, Mysql e Redis.
 
 - 📖 [Comunicação entre microservices usando Spring Cloud](https://www.udemy.com/course/comunicacao-entre-microservices-usando-spring-cloud/learn/lecture/16435694?start=30#overview)
 - 📖 [Repositório Git do Curso](https://github.com/marcelosv/ms-communication)
@@ -20,6 +20,11 @@
 - 📖 [Automate infrastructure on any cloud with Terraform](https://www.terraform.io/)
 - 📖 [Como configurar LocalStack para mapear serviços da AWS](https://medium.com/@valdemarjuniorr/como-configurar-localstack-para-mapear-servicos-da-aws-c8c25e6363b4)
 - 📖 [LocalStack: ambiente local para testar a sua aplicação AWS](https://thomsdacosta.medium.com/localstack-ambiente-local-para-testar-a-sua-aplica%C3%A7%C3%A3o-aws-4bc255e3ab56)
+- 📖 [Terraform Localstack - Criando um ambiente AWS FREE!](https://youtu.be/OMEf3XGyof8?si=EwtG8jTFc2MhY6xV)
+- 📖 [Localstack Installation](https://docs.localstack.cloud/getting-started/installation/)
+- 📖 [Terraform config](https://docs.localstack.cloud/user-guide/integrations/terraform/#manual-configuration)
+- 📖 [Localstack Features](https://docs.localstack.cloud/user-guide/aws/feature-coverage/)
+- 📖 [Terraform lab1](https://docs.localstack.cloud/getting-started/quickstart/)
 - 📖 [Java + AWS Lambda: montando um ambiente de desenvolvimento local com LocalStack](https://thomsdacosta.medium.com/java-aws-lambda-montando-um-ambiente-de-desenvolvimento-local-com-localstack-a845624bee40)
 - 📖 [Config an API Gateway in LocalStack](https://chatgpt.com/c/6730f34b-628c-8011-8e08-40124f6e1e10)
 - 📖 [Deploy API Spring AWS usando Localstack](https://chatgpt.com/c/66fbe356-69b4-8011-919c-3b0753a5c943)
