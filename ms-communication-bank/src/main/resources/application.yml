@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: ms-communication-bank
+  config:
+    activate:
+      on-profile: localstack
+  cloud:
+    aws:
+      region:
+        static: sa-east-1
+      credentials:
+        access-key: test
+        secret-key: test
+      skip_credentials_validation: true
+      skip_metadata_api_check:     true
+      skip_requesting_account_id:  true
+      endpoint:
+        dynamodb:        http://localhost:4566
+        lambda:          http://localhost:4566
+        apigateway:      http://localhost:4566
+        iam:             http://localhost:4566
+
+  function:
+    definition: StreamLambdaHandlerBank
+
+app:
+  aws:
+    dynamodb:
+      tables:
+        cartao: Cartao
+        pagamento: Pagamento
+    lambda:
+      function-name: StreamLambdaHandlerBank
+      handler: br.com.lduran.StreamLambdaHandlerBank::handleRequest
+      runtime: java11
+      memory-size: 512
+      timeout: 30
+      source-code: target/ms-communication-bank-0.0.1-SNAPSHOT-lambda-package.zip
+      environment:
+        TABLE_PAGAMENTO: ${dynamodb.tables.pagamento}
+        TABLE_CARTAO: ${dynamodb.tables.cartao}
+        AWS_ENDPOINT_URL: http://host.docker.internal:4566
+
+api:
+  gateway:
+    endpoints:
+      - path: "/cartao"
+        methods: ["GET", "POST"]
+      - path: "/cartao/{id}"
+        methods: ["GET", "PUT", "DELETE"]
+      - path: "/cartao/list"
+        methods: ["POST"]
+      - path: "/cartao/filtro"
+        methods: ["GET"]
+      - path: "/pagamento"
+        methods: ["POST"]
