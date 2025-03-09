@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "5f86af69-356d-408f-ad00-87244cab2f7a",
+		"name": "Microservices Communication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12464052"
+	},
+	"item": [
+		{
+			"name": "PostCredCard",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nro_cartao\": \"402625 584742 7277\",\r\n   \"codigo_seguranca_cartao\": 210,\r\n   \"valor_credito\": \"$193.04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_id}}/prod/cartao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_id}}",
+						"prod",
+						"cartao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostListCards",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n\t\t\"id\": \"C94775ED-F13E-2B69-0323-9D4F7EC187B4\",\r\n\t\t\"nro_cartao\": \"402625 584742 7277\",\r\n\t\t\"codigo_seguranca_cartao\": 210,\r\n\t\t\"valor_credito\": \"$193.04\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2A6BB49E-35BC-A69A-AAE5-882453DC6F35\",\r\n\t\t\"nro_cartao\": \"490538 5953995423\",\r\n\t\t\"codigo_seguranca_cartao\": 993,\r\n\t\t\"valor_credito\": \"$473.62\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F49C8827-482C-4C6E-9FC3-EC087A9DA5DD\",\r\n\t\t\"nro_cartao\": \"6771 5233 7548 7738\",\r\n\t\t\"codigo_seguranca_cartao\": 632,\r\n\t\t\"valor_credito\": \"$263.01\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"CDC69992-1B58-53F6-241A-37E7618ECB1C\",\r\n\t\t\"nro_cartao\": \"633474 3788737756\",\r\n\t\t\"codigo_seguranca_cartao\": 457,\r\n\t\t\"valor_credito\": \"$597.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"161843BA-B8AB-D143-679A-17D81BD0EA3D\",\r\n\t\t\"nro_cartao\": \"63045639476472253\",\r\n\t\t\"codigo_seguranca_cartao\": 675,\r\n\t\t\"valor_credito\": \"$157.53\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"77345C69-33D6-E769-142B-92614A9932FE\",\r\n\t\t\"nro_cartao\": \"644358 275487 5333\",\r\n\t\t\"codigo_seguranca_cartao\": 922,\r\n\t\t\"valor_credito\": \"$55.50\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"4A24AD15-A62A-1D64-8EBC-133141B9CE9E\",\r\n\t\t\"nro_cartao\": \"2149 427574 28623\",\r\n\t\t\"codigo_seguranca_cartao\": 492,\r\n\t\t\"valor_credito\": \"$178.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"399B3858-B7E2-403A-C450-638726097A91\",\r\n\t\t\"nro_cartao\": \"3622 155931 55852\",\r\n\t\t\"codigo_seguranca_cartao\": 679,\r\n\t\t\"valor_credito\": \"$117.66\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1A2F07EA-E329-A3AB-42DD-B5AC8E311FAC\",\r\n\t\t\"nro_cartao\": \"6706 7698 6296 6797\",\r\n\t\t\"codigo_seguranca_cartao\": 878,\r\n\t\t\"valor_credito\": \"$331.36\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"96729249-D7A4-6F4C-28E5-8F9FE6630207\",\r\n\t\t\"nro_cartao\": \"4905344538567454\",\r\n\t\t\"codigo_seguranca_cartao\": 684,\r\n\t\t\"valor_credito\": \"$115.89\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"37653A3A-1D68-2CF8-B86E-7E3674B4629A\",\r\n\t\t\"nro_cartao\": \"3683 312864 24424\",\r\n\t\t\"codigo_seguranca_cartao\": 799,\r\n\t\t\"valor_credito\": \"$342.02\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"EBCDD47D-8B64-A6A0-7B8B-5484831AC943\",\r\n\t\t\"nro_cartao\": \"6771 3225 6373 7578\",\r\n\t\t\"codigo_seguranca_cartao\": 441,\r\n\t\t\"valor_credito\": \"$552.48\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0155E713-B546-A699-8DB3-C643639FC1A7\",\r\n\t\t\"nro_cartao\": \"301651982553568\",\r\n\t\t\"codigo_seguranca_cartao\": 193,\r\n\t\t\"valor_credito\": \"$454.76\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"6E681716-C578-1818-5A9D-546FFF891A30\",\r\n\t\t\"nro_cartao\": \"3057 526285 33695\",\r\n\t\t\"codigo_seguranca_cartao\": 784,\r\n\t\t\"valor_credito\": \"$288.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"80164591-6112-5335-ADB7-A008C015CDB1\",\r\n\t\t\"nro_cartao\": \"644222 936833 8362\",\r\n\t\t\"codigo_seguranca_cartao\": 141,\r\n\t\t\"valor_credito\": \"$2.06\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"982AD759-A940-46CA-82D4-0E088573265E\",\r\n\t\t\"nro_cartao\": \"6468 7688 2445 8768\",\r\n\t\t\"codigo_seguranca_cartao\": 592,\r\n\t\t\"valor_credito\": \"$285.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3E72B7F8-69D5-46A2-C2BF-8E6E6D3D5990\",\r\n\t\t\"nro_cartao\": \"214942463532254\",\r\n\t\t\"codigo_seguranca_cartao\": 518,\r\n\t\t\"valor_credito\": \"$264.40\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"549AC646-DD8D-2DB9-E888-D5B587976681\",\r\n\t\t\"nro_cartao\": \"3016 296348 57850\",\r\n\t\t\"codigo_seguranca_cartao\": 553,\r\n\t\t\"valor_credito\": \"$327.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"224906B6-7B6B-CB21-6C03-E621C58D018F\",\r\n\t\t\"nro_cartao\": \"3679 252179 42395\",\r\n\t\t\"codigo_seguranca_cartao\": 546,\r\n\t\t\"valor_credito\": \"$53.66\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"88FA498C-5B7F-825E-7B4C-7A26E00EEE8C\",\r\n\t\t\"nro_cartao\": \"201421347782950\",\r\n\t\t\"codigo_seguranca_cartao\": 645,\r\n\t\t\"valor_credito\": \"$171.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"79AB2370-0C28-3592-7FB5-D9516D5DB09D\",\r\n\t\t\"nro_cartao\": \"601132 295472 1736\",\r\n\t\t\"codigo_seguranca_cartao\": 535,\r\n\t\t\"valor_credito\": \"$386.02\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"57C93E34-CC7C-9E85-9413-11E63E946937\",\r\n\t\t\"nro_cartao\": \"214931523869962\",\r\n\t\t\"codigo_seguranca_cartao\": 249,\r\n\t\t\"valor_credito\": \"$472.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"766D7DAC-2B7E-72BB-161B-79D61485D2B8\",\r\n\t\t\"nro_cartao\": \"493617 5892252447\",\r\n\t\t\"codigo_seguranca_cartao\": 613,\r\n\t\t\"valor_credito\": \"$481.84\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"63FA68FB-7412-C77B-635D-33B73AD518BE\",\r\n\t\t\"nro_cartao\": \"633468 89 7466 8537 691\",\r\n\t\t\"codigo_seguranca_cartao\": 470,\r\n\t\t\"valor_credito\": \"$330.64\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C0756AB2-5843-7FEB-283D-D42CAB7167D2\",\r\n\t\t\"nro_cartao\": \"4532234684358587\",\r\n\t\t\"codigo_seguranca_cartao\": 713,\r\n\t\t\"valor_credito\": \"$101.28\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2EBC4A37-B67B-5F40-AD14-5B16AE7CA9E4\",\r\n\t\t\"nro_cartao\": \"67098197247869650\",\r\n\t\t\"codigo_seguranca_cartao\": 443,\r\n\t\t\"valor_credito\": \"$292.46\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F2DF54D1-91DF-717F-DA74-D314155416E5\",\r\n\t\t\"nro_cartao\": \"214986454664790\",\r\n\t\t\"codigo_seguranca_cartao\": 397,\r\n\t\t\"valor_credito\": \"$433.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"625692E0-7259-6A12-463E-E8C50FB5EF38\",\r\n\t\t\"nro_cartao\": \"5628 2385 8687 4387\",\r\n\t\t\"codigo_seguranca_cartao\": 823,\r\n\t\t\"valor_credito\": \"$444.07\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"31CCED3D-8983-1CCC-2594-B7154A6D1D82\",\r\n\t\t\"nro_cartao\": \"4556432849468\",\r\n\t\t\"codigo_seguranca_cartao\": 794,\r\n\t\t\"valor_credito\": \"$161.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C6620D28-4A4D-CA1C-668D-13D51B103129\",\r\n\t\t\"nro_cartao\": \"3715 564477 77287\",\r\n\t\t\"codigo_seguranca_cartao\": 410,\r\n\t\t\"valor_credito\": \"$499.79\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"335BC7B3-7712-3215-A83A-68989A4D3D1C\",\r\n\t\t\"nro_cartao\": \"676767 57 6499 2899 982\",\r\n\t\t\"codigo_seguranca_cartao\": 223,\r\n\t\t\"valor_credito\": \"$142.29\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1EA1B64D-35F8-21C6-73E0-558BC45A12E7\",\r\n\t\t\"nro_cartao\": \"633446 1356983674\",\r\n\t\t\"codigo_seguranca_cartao\": 212,\r\n\t\t\"valor_credito\": \"$362.21\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"94A81F76-740F-E543-5DB6-51E405E4194D\",\r\n\t\t\"nro_cartao\": \"453 29538 87467 552\",\r\n\t\t\"codigo_seguranca_cartao\": 831,\r\n\t\t\"valor_credito\": \"$412.50\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"90022477-8138-4D21-3D03-A5820B8191B2\",\r\n\t\t\"nro_cartao\": \"6473572235823781\",\r\n\t\t\"codigo_seguranca_cartao\": 369,\r\n\t\t\"valor_credito\": \"$590.21\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"047191A8-5CB9-18BD-10E6-5CE690F33729\",\r\n\t\t\"nro_cartao\": \"63045365686137\",\r\n\t\t\"codigo_seguranca_cartao\": 461,\r\n\t\t\"valor_credito\": \"$539.04\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"149C953E-C6E4-7ED7-1958-BF7E4EA7BCFA\",\r\n\t\t\"nro_cartao\": \"5421863976864372\",\r\n\t\t\"codigo_seguranca_cartao\": 984,\r\n\t\t\"valor_credito\": \"$90.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"BBC84439-DDAC-1432-5B50-11DDB85AD4A4\",\r\n\t\t\"nro_cartao\": \"548177 5578632923\",\r\n\t\t\"codigo_seguranca_cartao\": 449,\r\n\t\t\"valor_credito\": \"$39.07\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C424327B-6794-7CBD-9196-92E3588D8C38\",\r\n\t\t\"nro_cartao\": \"533272 4622424185\",\r\n\t\t\"codigo_seguranca_cartao\": 273,\r\n\t\t\"valor_credito\": \"$31.19\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"4595EDCD-9627-54E1-2C66-3EE6C8843766\",\r\n\t\t\"nro_cartao\": \"367743644337257\",\r\n\t\t\"codigo_seguranca_cartao\": 763,\r\n\t\t\"valor_credito\": \"$247.12\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"CAD417A9-5E86-5223-D0A7-1C88D24F7DBE\",\r\n\t\t\"nro_cartao\": \"554 77285 52854 585\",\r\n\t\t\"codigo_seguranca_cartao\": 380,\r\n\t\t\"valor_credito\": \"$215.49\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"727B2AD1-35C2-C5DF-723F-9D2DA30E1161\",\r\n\t\t\"nro_cartao\": \"490 31656 43217 681\",\r\n\t\t\"codigo_seguranca_cartao\": 807,\r\n\t\t\"valor_credito\": \"$372.27\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"9E8456F9-C084-341B-6BA0-8374A5EC66DA\",\r\n\t\t\"nro_cartao\": \"630 48362 68434 864\",\r\n\t\t\"codigo_seguranca_cartao\": 921,\r\n\t\t\"valor_credito\": \"$338.41\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C91C5E8E-23B6-BD9A-61E9-3B95CCDC4EA3\",\r\n\t\t\"nro_cartao\": \"544542 666819 8442\",\r\n\t\t\"codigo_seguranca_cartao\": 993,\r\n\t\t\"valor_credito\": \"$356.86\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"91A23B43-ADBC-E120-C521-35ABB9A685B5\",\r\n\t\t\"nro_cartao\": \"6462 2694 9455 6235\",\r\n\t\t\"codigo_seguranca_cartao\": 355,\r\n\t\t\"valor_credito\": \"$27.93\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"09464413-8BD2-6D22-CC69-C5DD9EBA9238\",\r\n\t\t\"nro_cartao\": \"455629 758775 1860\",\r\n\t\t\"codigo_seguranca_cartao\": 315,\r\n\t\t\"valor_credito\": \"$305.90\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"E3ED1B18-4F25-96C2-2DED-6CD6B1EE67A7\",\r\n\t\t\"nro_cartao\": \"6479 9754 4362 9367\",\r\n\t\t\"codigo_seguranca_cartao\": 406,\r\n\t\t\"valor_credito\": \"$244.30\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5469B2A8-3D89-745B-64EA-D77135F25762\",\r\n\t\t\"nro_cartao\": \"368527774742561\",\r\n\t\t\"codigo_seguranca_cartao\": 763,\r\n\t\t\"valor_credito\": \"$269.67\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"95258252-B9D8-7414-DC52-B2278B625111\",\r\n\t\t\"nro_cartao\": \"633110 84 5413 3332 646\",\r\n\t\t\"codigo_seguranca_cartao\": 848,\r\n\t\t\"valor_credito\": \"$266.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"FF0632C8-6686-5C86-A6C4-66CC0CF0B4A7\",\r\n\t\t\"nro_cartao\": \"6523 9843 6559 3847\",\r\n\t\t\"codigo_seguranca_cartao\": 148,\r\n\t\t\"valor_credito\": \"$310.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7E2D815A-C29D-7D86-167B-3B8D4923557C\",\r\n\t\t\"nro_cartao\": \"538851 868599 5591\",\r\n\t\t\"codigo_seguranca_cartao\": 871,\r\n\t\t\"valor_credito\": \"$434.13\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"FBBD3BBB-926E-D235-83B8-4355A173E073\",\r\n\t\t\"nro_cartao\": \"368178554748285\",\r\n\t\t\"codigo_seguranca_cartao\": 889,\r\n\t\t\"valor_credito\": \"$103.82\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"6DC7AF60-A740-356B-6428-C1DA2E55A1D4\",\r\n\t\t\"nro_cartao\": \"5893 6865 8681 3110\",\r\n\t\t\"codigo_seguranca_cartao\": 699,\r\n\t\t\"valor_credito\": \"$300.93\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C3B55444-BC2E-35EE-ADB3-3631BA31321B\",\r\n\t\t\"nro_cartao\": \"303878553386478\",\r\n\t\t\"codigo_seguranca_cartao\": 491,\r\n\t\t\"valor_credito\": \"$444.75\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A9BC8651-BA7E-86E9-6D25-8C1ABA2F1A19\",\r\n\t\t\"nro_cartao\": \"4905873761262776674\",\r\n\t\t\"codigo_seguranca_cartao\": 315,\r\n\t\t\"valor_credito\": \"$142.20\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2AC967CA-4CB4-4D49-CB4F-E952E7EE38A8\",\r\n\t\t\"nro_cartao\": \"3043 611778 76629\",\r\n\t\t\"codigo_seguranca_cartao\": 274,\r\n\t\t\"valor_credito\": \"$505.70\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D78F56D2-B5CE-AADA-ECAC-35DC0868ED54\",\r\n\t\t\"nro_cartao\": \"3051 428475 32530\",\r\n\t\t\"codigo_seguranca_cartao\": 198,\r\n\t\t\"valor_credito\": \"$438.83\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C5E1306E-946B-4014-AE40-D16856517ADD\",\r\n\t\t\"nro_cartao\": \"3615 466658 96283\",\r\n\t\t\"codigo_seguranca_cartao\": 609,\r\n\t\t\"valor_credito\": \"$303.64\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5C9B496D-95E0-029E-83A6-071C99836AEE\",\r\n\t\t\"nro_cartao\": \"5038537713625\",\r\n\t\t\"codigo_seguranca_cartao\": 311,\r\n\t\t\"valor_credito\": \"$181.71\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2638A7ED-AAFA-E7A3-C8EC-71842947D278\",\r\n\t\t\"nro_cartao\": \"2149 336233 48178\",\r\n\t\t\"codigo_seguranca_cartao\": 423,\r\n\t\t\"valor_credito\": \"$204.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C1F6BD28-C022-3B32-57BD-667CCC11E277\",\r\n\t\t\"nro_cartao\": \"402618 539648 1245\",\r\n\t\t\"codigo_seguranca_cartao\": 183,\r\n\t\t\"valor_credito\": \"$155.03\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F4567701-1802-C903-9115-3BEC2C5CA2E6\",\r\n\t\t\"nro_cartao\": \"5437 4524 8372 4261\",\r\n\t\t\"codigo_seguranca_cartao\": 130,\r\n\t\t\"valor_credito\": \"$115.79\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A156E777-1B1E-8DA4-B070-AEAE0C863B2E\",\r\n\t\t\"nro_cartao\": \"5166 9776 3421 8729\",\r\n\t\t\"codigo_seguranca_cartao\": 466,\r\n\t\t\"valor_credito\": \"$212.56\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0536D0D6-68C1-3B28-38E9-CE3F738F93A9\",\r\n\t\t\"nro_cartao\": \"348786444863224\",\r\n\t\t\"codigo_seguranca_cartao\": 319,\r\n\t\t\"valor_credito\": \"$558.74\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"81BC7DE7-B262-A9A7-75B6-E95C7DD21265\",\r\n\t\t\"nro_cartao\": \"305742557541462\",\r\n\t\t\"codigo_seguranca_cartao\": 235,\r\n\t\t\"valor_credito\": \"$213.37\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C662D5FC-2CE5-2197-AE44-CFFA8362BB76\",\r\n\t\t\"nro_cartao\": \"633418 217486 9339\",\r\n\t\t\"codigo_seguranca_cartao\": 474,\r\n\t\t\"valor_credito\": \"$564.36\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D8D59C3A-5052-C49F-C823-57A1B7315D95\",\r\n\t\t\"nro_cartao\": \"3457 572495 88442\",\r\n\t\t\"codigo_seguranca_cartao\": 893,\r\n\t\t\"valor_credito\": \"$24.15\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"BC671BB6-6182-22B6-3368-AEF98A585CC2\",\r\n\t\t\"nro_cartao\": \"490593373628163682\",\r\n\t\t\"codigo_seguranca_cartao\": 319,\r\n\t\t\"valor_credito\": \"$380.14\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A811EB42-992E-39C5-1301-5E189A1FDB19\",\r\n\t\t\"nro_cartao\": \"491138564517585833\",\r\n\t\t\"codigo_seguranca_cartao\": 857,\r\n\t\t\"valor_credito\": \"$582.71\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DD50CC0D-A6EE-E6A1-6405-D02DF7FF3372\",\r\n\t\t\"nro_cartao\": \"453 21517 87578 830\",\r\n\t\t\"codigo_seguranca_cartao\": 772,\r\n\t\t\"valor_credito\": \"$557.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2A2E8477-3EEB-8DF2-C636-416453A190A7\",\r\n\t\t\"nro_cartao\": \"633483 18 6989 5677 839\",\r\n\t\t\"codigo_seguranca_cartao\": 180,\r\n\t\t\"valor_credito\": \"$40.67\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7EAC60B4-B884-271B-6155-B05367D61C3A\",\r\n\t\t\"nro_cartao\": \"601144 769546 6737\",\r\n\t\t\"codigo_seguranca_cartao\": 743,\r\n\t\t\"valor_credito\": \"$411.94\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"18682935-8072-4CDD-EB7A-27C195DEFBB2\",\r\n\t\t\"nro_cartao\": \"3625 827342 39444\",\r\n\t\t\"codigo_seguranca_cartao\": 921,\r\n\t\t\"valor_credito\": \"$71.14\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"79382803-417D-9DA3-CACB-BEC16281B120\",\r\n\t\t\"nro_cartao\": \"2149 555586 35386\",\r\n\t\t\"codigo_seguranca_cartao\": 772,\r\n\t\t\"valor_credito\": \"$562.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1F369FD8-9187-BD92-6E9E-7415CE87862F\",\r\n\t\t\"nro_cartao\": \"377882588639464\",\r\n\t\t\"codigo_seguranca_cartao\": 308,\r\n\t\t\"valor_credito\": \"$533.83\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B44363EE-6732-5EDC-C32A-1C5C61172071\",\r\n\t\t\"nro_cartao\": \"6334 7667 7314 8838\",\r\n\t\t\"codigo_seguranca_cartao\": 619,\r\n\t\t\"valor_credito\": \"$52.20\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C41B6ACF-D3CA-95FD-3688-416022FA118C\",\r\n\t\t\"nro_cartao\": \"633 47283 33662 591\",\r\n\t\t\"codigo_seguranca_cartao\": 407,\r\n\t\t\"valor_credito\": \"$43.30\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DA2E4547-79C6-248F-6725-E701AF6EAD6C\",\r\n\t\t\"nro_cartao\": \"377474754597971\",\r\n\t\t\"codigo_seguranca_cartao\": 526,\r\n\t\t\"valor_credito\": \"$279.69\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7C30422A-7D25-41DF-43D2-38C38B7A9A7D\",\r\n\t\t\"nro_cartao\": \"3734 599576 51372\",\r\n\t\t\"codigo_seguranca_cartao\": 997,\r\n\t\t\"valor_credito\": \"$395.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B770887E-5D6B-6035-1E81-46B755962715\",\r\n\t\t\"nro_cartao\": \"670696773623687747\",\r\n\t\t\"codigo_seguranca_cartao\": 303,\r\n\t\t\"valor_credito\": \"$220.26\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"42334BDD-E1CF-C3DF-985D-BAF91535AE8B\",\r\n\t\t\"nro_cartao\": \"484 48127 46363 324\",\r\n\t\t\"codigo_seguranca_cartao\": 866,\r\n\t\t\"valor_credito\": \"$228.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"85672E7C-ED8A-74B3-DB7A-59BE8AA1D631\",\r\n\t\t\"nro_cartao\": \"367723656162785\",\r\n\t\t\"codigo_seguranca_cartao\": 855,\r\n\t\t\"valor_credito\": \"$563.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3BE07598-7785-EBC7-D77A-DBCC47E19E6A\",\r\n\t\t\"nro_cartao\": \"3034 322494 77786\",\r\n\t\t\"codigo_seguranca_cartao\": 114,\r\n\t\t\"valor_credito\": \"$297.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B05744CC-EE63-BCA2-44D6-7C547EFB292F\",\r\n\t\t\"nro_cartao\": \"4024007124154898\",\r\n\t\t\"codigo_seguranca_cartao\": 617,\r\n\t\t\"valor_credito\": \"$224.35\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"15A61DA6-A8AC-AA82-32AE-924572A9D799\",\r\n\t\t\"nro_cartao\": \"372397284327582\",\r\n\t\t\"codigo_seguranca_cartao\": 894,\r\n\t\t\"valor_credito\": \"$491.39\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F1D11F8A-4C03-6A99-82E1-58D8A329C826\",\r\n\t\t\"nro_cartao\": \"4175 0084 9335 7424\",\r\n\t\t\"codigo_seguranca_cartao\": 728,\r\n\t\t\"valor_credito\": \"$438.80\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B7519D77-CB4C-4C37-E30E-F95C2527F7D6\",\r\n\t\t\"nro_cartao\": \"532463 451489 2359\",\r\n\t\t\"codigo_seguranca_cartao\": 971,\r\n\t\t\"valor_credito\": \"$583.16\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"E5479E03-5B34-0C34-45D2-D7ACDABCDA7D\",\r\n\t\t\"nro_cartao\": \"6334594683132249550\",\r\n\t\t\"codigo_seguranca_cartao\": 198,\r\n\t\t\"valor_credito\": \"$16.52\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"751C45D4-3C8D-ED89-F39D-B698364A0EDA\",\r\n\t\t\"nro_cartao\": \"3659 851554 35218\",\r\n\t\t\"codigo_seguranca_cartao\": 880,\r\n\t\t\"valor_credito\": \"$462.47\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0B7A6C65-C414-6815-541C-B3F294753467\",\r\n\t\t\"nro_cartao\": \"676322528994560\",\r\n\t\t\"codigo_seguranca_cartao\": 186,\r\n\t\t\"valor_credito\": \"$43.95\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2E8B38E9-3BBF-88DE-0785-B428FE89510B\",\r\n\t\t\"nro_cartao\": \"676 39487 33854 271\",\r\n\t\t\"codigo_seguranca_cartao\": 903,\r\n\t\t\"valor_credito\": \"$225.34\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DA3C23BF-0FE4-B9F3-A49F-478CBAD9CBDC\",\r\n\t\t\"nro_cartao\": \"374465623434522\",\r\n\t\t\"codigo_seguranca_cartao\": 460,\r\n\t\t\"valor_credito\": \"$503.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DEC465A7-86D2-49ED-45E4-1474D6FF420A\",\r\n\t\t\"nro_cartao\": \"2149 562168 82535\",\r\n\t\t\"codigo_seguranca_cartao\": 227,\r\n\t\t\"valor_credito\": \"$525.17\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"39638145-3377-DD26-9802-E1C912E38758\",\r\n\t\t\"nro_cartao\": \"676 77463 71427 483\",\r\n\t\t\"codigo_seguranca_cartao\": 723,\r\n\t\t\"valor_credito\": \"$341.18\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7AD7F906-9135-D397-9B25-7B721032129E\",\r\n\t\t\"nro_cartao\": \"676 75232 42844 463\",\r\n\t\t\"codigo_seguranca_cartao\": 862,\r\n\t\t\"valor_credito\": \"$279.90\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"94E259EC-1082-65BE-842E-B6895A66E73B\",\r\n\t\t\"nro_cartao\": \"304174494398155\",\r\n\t\t\"codigo_seguranca_cartao\": 605,\r\n\t\t\"valor_credito\": \"$202.16\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D9C4AC14-8486-E429-E360-1F390A13F590\",\r\n\t\t\"nro_cartao\": \"6488145741128665\",\r\n\t\t\"codigo_seguranca_cartao\": 943,\r\n\t\t\"valor_credito\": \"$487.80\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3EC914C6-C724-1556-A04C-BEC8D8B1DE73\",\r\n\t\t\"nro_cartao\": \"549761 2537285869\",\r\n\t\t\"codigo_seguranca_cartao\": 969,\r\n\t\t\"valor_credito\": \"$159.54\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5E921ECE-3132-1E69-414C-D45C0A28606F\",\r\n\t\t\"nro_cartao\": \"6474 4617 8539 5821\",\r\n\t\t\"codigo_seguranca_cartao\": 278,\r\n\t\t\"valor_credito\": \"$312.49\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"896D47E6-4187-0A20-1646-73D3A340FC72\",\r\n\t\t\"nro_cartao\": \"6763 1372 5338 1622\",\r\n\t\t\"codigo_seguranca_cartao\": 449,\r\n\t\t\"valor_credito\": \"$19.85\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"779D5FD2-618D-D3F2-9CC4-C55BA39E95ED\",\r\n\t\t\"nro_cartao\": \"302973616422252\",\r\n\t\t\"codigo_seguranca_cartao\": 680,\r\n\t\t\"valor_credito\": \"$193.73\"\r\n\t}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/cartao/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"cartao",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostListCards - LCL",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n\t\t\"id\": \"C94775ED-F13E-2B69-0323-9D4F7EC187B4\",\r\n\t\t\"nro_cartao\": \"402625 584742 7277\",\r\n\t\t\"codigo_seguranca_cartao\": 210,\r\n\t\t\"valor_credito\": \"$193.04\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2A6BB49E-35BC-A69A-AAE5-882453DC6F35\",\r\n\t\t\"nro_cartao\": \"490538 5953995423\",\r\n\t\t\"codigo_seguranca_cartao\": 993,\r\n\t\t\"valor_credito\": \"$473.62\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F49C8827-482C-4C6E-9FC3-EC087A9DA5DD\",\r\n\t\t\"nro_cartao\": \"6771 5233 7548 7738\",\r\n\t\t\"codigo_seguranca_cartao\": 632,\r\n\t\t\"valor_credito\": \"$263.01\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"CDC69992-1B58-53F6-241A-37E7618ECB1C\",\r\n\t\t\"nro_cartao\": \"633474 3788737756\",\r\n\t\t\"codigo_seguranca_cartao\": 457,\r\n\t\t\"valor_credito\": \"$597.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"161843BA-B8AB-D143-679A-17D81BD0EA3D\",\r\n\t\t\"nro_cartao\": \"63045639476472253\",\r\n\t\t\"codigo_seguranca_cartao\": 675,\r\n\t\t\"valor_credito\": \"$157.53\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"77345C69-33D6-E769-142B-92614A9932FE\",\r\n\t\t\"nro_cartao\": \"644358 275487 5333\",\r\n\t\t\"codigo_seguranca_cartao\": 922,\r\n\t\t\"valor_credito\": \"$55.50\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"4A24AD15-A62A-1D64-8EBC-133141B9CE9E\",\r\n\t\t\"nro_cartao\": \"2149 427574 28623\",\r\n\t\t\"codigo_seguranca_cartao\": 492,\r\n\t\t\"valor_credito\": \"$178.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"399B3858-B7E2-403A-C450-638726097A91\",\r\n\t\t\"nro_cartao\": \"3622 155931 55852\",\r\n\t\t\"codigo_seguranca_cartao\": 679,\r\n\t\t\"valor_credito\": \"$117.66\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1A2F07EA-E329-A3AB-42DD-B5AC8E311FAC\",\r\n\t\t\"nro_cartao\": \"6706 7698 6296 6797\",\r\n\t\t\"codigo_seguranca_cartao\": 878,\r\n\t\t\"valor_credito\": \"$331.36\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"96729249-D7A4-6F4C-28E5-8F9FE6630207\",\r\n\t\t\"nro_cartao\": \"4905344538567454\",\r\n\t\t\"codigo_seguranca_cartao\": 684,\r\n\t\t\"valor_credito\": \"$115.89\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"37653A3A-1D68-2CF8-B86E-7E3674B4629A\",\r\n\t\t\"nro_cartao\": \"3683 312864 24424\",\r\n\t\t\"codigo_seguranca_cartao\": 799,\r\n\t\t\"valor_credito\": \"$342.02\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"EBCDD47D-8B64-A6A0-7B8B-5484831AC943\",\r\n\t\t\"nro_cartao\": \"6771 3225 6373 7578\",\r\n\t\t\"codigo_seguranca_cartao\": 441,\r\n\t\t\"valor_credito\": \"$552.48\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0155E713-B546-A699-8DB3-C643639FC1A7\",\r\n\t\t\"nro_cartao\": \"301651982553568\",\r\n\t\t\"codigo_seguranca_cartao\": 193,\r\n\t\t\"valor_credito\": \"$454.76\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"6E681716-C578-1818-5A9D-546FFF891A30\",\r\n\t\t\"nro_cartao\": \"3057 526285 33695\",\r\n\t\t\"codigo_seguranca_cartao\": 784,\r\n\t\t\"valor_credito\": \"$288.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"80164591-6112-5335-ADB7-A008C015CDB1\",\r\n\t\t\"nro_cartao\": \"644222 936833 8362\",\r\n\t\t\"codigo_seguranca_cartao\": 141,\r\n\t\t\"valor_credito\": \"$2.06\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"982AD759-A940-46CA-82D4-0E088573265E\",\r\n\t\t\"nro_cartao\": \"6468 7688 2445 8768\",\r\n\t\t\"codigo_seguranca_cartao\": 592,\r\n\t\t\"valor_credito\": \"$285.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3E72B7F8-69D5-46A2-C2BF-8E6E6D3D5990\",\r\n\t\t\"nro_cartao\": \"214942463532254\",\r\n\t\t\"codigo_seguranca_cartao\": 518,\r\n\t\t\"valor_credito\": \"$264.40\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"549AC646-DD8D-2DB9-E888-D5B587976681\",\r\n\t\t\"nro_cartao\": \"3016 296348 57850\",\r\n\t\t\"codigo_seguranca_cartao\": 553,\r\n\t\t\"valor_credito\": \"$327.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"224906B6-7B6B-CB21-6C03-E621C58D018F\",\r\n\t\t\"nro_cartao\": \"3679 252179 42395\",\r\n\t\t\"codigo_seguranca_cartao\": 546,\r\n\t\t\"valor_credito\": \"$53.66\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"88FA498C-5B7F-825E-7B4C-7A26E00EEE8C\",\r\n\t\t\"nro_cartao\": \"201421347782950\",\r\n\t\t\"codigo_seguranca_cartao\": 645,\r\n\t\t\"valor_credito\": \"$171.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"79AB2370-0C28-3592-7FB5-D9516D5DB09D\",\r\n\t\t\"nro_cartao\": \"601132 295472 1736\",\r\n\t\t\"codigo_seguranca_cartao\": 535,\r\n\t\t\"valor_credito\": \"$386.02\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"57C93E34-CC7C-9E85-9413-11E63E946937\",\r\n\t\t\"nro_cartao\": \"214931523869962\",\r\n\t\t\"codigo_seguranca_cartao\": 249,\r\n\t\t\"valor_credito\": \"$472.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"766D7DAC-2B7E-72BB-161B-79D61485D2B8\",\r\n\t\t\"nro_cartao\": \"493617 5892252447\",\r\n\t\t\"codigo_seguranca_cartao\": 613,\r\n\t\t\"valor_credito\": \"$481.84\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"63FA68FB-7412-C77B-635D-33B73AD518BE\",\r\n\t\t\"nro_cartao\": \"633468 89 7466 8537 691\",\r\n\t\t\"codigo_seguranca_cartao\": 470,\r\n\t\t\"valor_credito\": \"$330.64\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C0756AB2-5843-7FEB-283D-D42CAB7167D2\",\r\n\t\t\"nro_cartao\": \"4532234684358587\",\r\n\t\t\"codigo_seguranca_cartao\": 713,\r\n\t\t\"valor_credito\": \"$101.28\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2EBC4A37-B67B-5F40-AD14-5B16AE7CA9E4\",\r\n\t\t\"nro_cartao\": \"67098197247869650\",\r\n\t\t\"codigo_seguranca_cartao\": 443,\r\n\t\t\"valor_credito\": \"$292.46\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F2DF54D1-91DF-717F-DA74-D314155416E5\",\r\n\t\t\"nro_cartao\": \"214986454664790\",\r\n\t\t\"codigo_seguranca_cartao\": 397,\r\n\t\t\"valor_credito\": \"$433.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"625692E0-7259-6A12-463E-E8C50FB5EF38\",\r\n\t\t\"nro_cartao\": \"5628 2385 8687 4387\",\r\n\t\t\"codigo_seguranca_cartao\": 823,\r\n\t\t\"valor_credito\": \"$444.07\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"31CCED3D-8983-1CCC-2594-B7154A6D1D82\",\r\n\t\t\"nro_cartao\": \"4556432849468\",\r\n\t\t\"codigo_seguranca_cartao\": 794,\r\n\t\t\"valor_credito\": \"$161.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C6620D28-4A4D-CA1C-668D-13D51B103129\",\r\n\t\t\"nro_cartao\": \"3715 564477 77287\",\r\n\t\t\"codigo_seguranca_cartao\": 410,\r\n\t\t\"valor_credito\": \"$499.79\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"335BC7B3-7712-3215-A83A-68989A4D3D1C\",\r\n\t\t\"nro_cartao\": \"676767 57 6499 2899 982\",\r\n\t\t\"codigo_seguranca_cartao\": 223,\r\n\t\t\"valor_credito\": \"$142.29\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1EA1B64D-35F8-21C6-73E0-558BC45A12E7\",\r\n\t\t\"nro_cartao\": \"633446 1356983674\",\r\n\t\t\"codigo_seguranca_cartao\": 212,\r\n\t\t\"valor_credito\": \"$362.21\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"94A81F76-740F-E543-5DB6-51E405E4194D\",\r\n\t\t\"nro_cartao\": \"453 29538 87467 552\",\r\n\t\t\"codigo_seguranca_cartao\": 831,\r\n\t\t\"valor_credito\": \"$412.50\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"90022477-8138-4D21-3D03-A5820B8191B2\",\r\n\t\t\"nro_cartao\": \"6473572235823781\",\r\n\t\t\"codigo_seguranca_cartao\": 369,\r\n\t\t\"valor_credito\": \"$590.21\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"047191A8-5CB9-18BD-10E6-5CE690F33729\",\r\n\t\t\"nro_cartao\": \"63045365686137\",\r\n\t\t\"codigo_seguranca_cartao\": 461,\r\n\t\t\"valor_credito\": \"$539.04\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"149C953E-C6E4-7ED7-1958-BF7E4EA7BCFA\",\r\n\t\t\"nro_cartao\": \"5421863976864372\",\r\n\t\t\"codigo_seguranca_cartao\": 984,\r\n\t\t\"valor_credito\": \"$90.88\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"BBC84439-DDAC-1432-5B50-11DDB85AD4A4\",\r\n\t\t\"nro_cartao\": \"548177 5578632923\",\r\n\t\t\"codigo_seguranca_cartao\": 449,\r\n\t\t\"valor_credito\": \"$39.07\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C424327B-6794-7CBD-9196-92E3588D8C38\",\r\n\t\t\"nro_cartao\": \"533272 4622424185\",\r\n\t\t\"codigo_seguranca_cartao\": 273,\r\n\t\t\"valor_credito\": \"$31.19\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"4595EDCD-9627-54E1-2C66-3EE6C8843766\",\r\n\t\t\"nro_cartao\": \"367743644337257\",\r\n\t\t\"codigo_seguranca_cartao\": 763,\r\n\t\t\"valor_credito\": \"$247.12\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"CAD417A9-5E86-5223-D0A7-1C88D24F7DBE\",\r\n\t\t\"nro_cartao\": \"554 77285 52854 585\",\r\n\t\t\"codigo_seguranca_cartao\": 380,\r\n\t\t\"valor_credito\": \"$215.49\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"727B2AD1-35C2-C5DF-723F-9D2DA30E1161\",\r\n\t\t\"nro_cartao\": \"490 31656 43217 681\",\r\n\t\t\"codigo_seguranca_cartao\": 807,\r\n\t\t\"valor_credito\": \"$372.27\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"9E8456F9-C084-341B-6BA0-8374A5EC66DA\",\r\n\t\t\"nro_cartao\": \"630 48362 68434 864\",\r\n\t\t\"codigo_seguranca_cartao\": 921,\r\n\t\t\"valor_credito\": \"$338.41\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C91C5E8E-23B6-BD9A-61E9-3B95CCDC4EA3\",\r\n\t\t\"nro_cartao\": \"544542 666819 8442\",\r\n\t\t\"codigo_seguranca_cartao\": 993,\r\n\t\t\"valor_credito\": \"$356.86\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"91A23B43-ADBC-E120-C521-35ABB9A685B5\",\r\n\t\t\"nro_cartao\": \"6462 2694 9455 6235\",\r\n\t\t\"codigo_seguranca_cartao\": 355,\r\n\t\t\"valor_credito\": \"$27.93\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"09464413-8BD2-6D22-CC69-C5DD9EBA9238\",\r\n\t\t\"nro_cartao\": \"455629 758775 1860\",\r\n\t\t\"codigo_seguranca_cartao\": 315,\r\n\t\t\"valor_credito\": \"$305.90\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"E3ED1B18-4F25-96C2-2DED-6CD6B1EE67A7\",\r\n\t\t\"nro_cartao\": \"6479 9754 4362 9367\",\r\n\t\t\"codigo_seguranca_cartao\": 406,\r\n\t\t\"valor_credito\": \"$244.30\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5469B2A8-3D89-745B-64EA-D77135F25762\",\r\n\t\t\"nro_cartao\": \"368527774742561\",\r\n\t\t\"codigo_seguranca_cartao\": 763,\r\n\t\t\"valor_credito\": \"$269.67\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"95258252-B9D8-7414-DC52-B2278B625111\",\r\n\t\t\"nro_cartao\": \"633110 84 5413 3332 646\",\r\n\t\t\"codigo_seguranca_cartao\": 848,\r\n\t\t\"valor_credito\": \"$266.98\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"FF0632C8-6686-5C86-A6C4-66CC0CF0B4A7\",\r\n\t\t\"nro_cartao\": \"6523 9843 6559 3847\",\r\n\t\t\"codigo_seguranca_cartao\": 148,\r\n\t\t\"valor_credito\": \"$310.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7E2D815A-C29D-7D86-167B-3B8D4923557C\",\r\n\t\t\"nro_cartao\": \"538851 868599 5591\",\r\n\t\t\"codigo_seguranca_cartao\": 871,\r\n\t\t\"valor_credito\": \"$434.13\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"FBBD3BBB-926E-D235-83B8-4355A173E073\",\r\n\t\t\"nro_cartao\": \"368178554748285\",\r\n\t\t\"codigo_seguranca_cartao\": 889,\r\n\t\t\"valor_credito\": \"$103.82\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"6DC7AF60-A740-356B-6428-C1DA2E55A1D4\",\r\n\t\t\"nro_cartao\": \"5893 6865 8681 3110\",\r\n\t\t\"codigo_seguranca_cartao\": 699,\r\n\t\t\"valor_credito\": \"$300.93\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C3B55444-BC2E-35EE-ADB3-3631BA31321B\",\r\n\t\t\"nro_cartao\": \"303878553386478\",\r\n\t\t\"codigo_seguranca_cartao\": 491,\r\n\t\t\"valor_credito\": \"$444.75\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A9BC8651-BA7E-86E9-6D25-8C1ABA2F1A19\",\r\n\t\t\"nro_cartao\": \"4905873761262776674\",\r\n\t\t\"codigo_seguranca_cartao\": 315,\r\n\t\t\"valor_credito\": \"$142.20\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2AC967CA-4CB4-4D49-CB4F-E952E7EE38A8\",\r\n\t\t\"nro_cartao\": \"3043 611778 76629\",\r\n\t\t\"codigo_seguranca_cartao\": 274,\r\n\t\t\"valor_credito\": \"$505.70\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D78F56D2-B5CE-AADA-ECAC-35DC0868ED54\",\r\n\t\t\"nro_cartao\": \"3051 428475 32530\",\r\n\t\t\"codigo_seguranca_cartao\": 198,\r\n\t\t\"valor_credito\": \"$438.83\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C5E1306E-946B-4014-AE40-D16856517ADD\",\r\n\t\t\"nro_cartao\": \"3615 466658 96283\",\r\n\t\t\"codigo_seguranca_cartao\": 609,\r\n\t\t\"valor_credito\": \"$303.64\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5C9B496D-95E0-029E-83A6-071C99836AEE\",\r\n\t\t\"nro_cartao\": \"5038537713625\",\r\n\t\t\"codigo_seguranca_cartao\": 311,\r\n\t\t\"valor_credito\": \"$181.71\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2638A7ED-AAFA-E7A3-C8EC-71842947D278\",\r\n\t\t\"nro_cartao\": \"2149 336233 48178\",\r\n\t\t\"codigo_seguranca_cartao\": 423,\r\n\t\t\"valor_credito\": \"$204.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C1F6BD28-C022-3B32-57BD-667CCC11E277\",\r\n\t\t\"nro_cartao\": \"402618 539648 1245\",\r\n\t\t\"codigo_seguranca_cartao\": 183,\r\n\t\t\"valor_credito\": \"$155.03\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F4567701-1802-C903-9115-3BEC2C5CA2E6\",\r\n\t\t\"nro_cartao\": \"5437 4524 8372 4261\",\r\n\t\t\"codigo_seguranca_cartao\": 130,\r\n\t\t\"valor_credito\": \"$115.79\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A156E777-1B1E-8DA4-B070-AEAE0C863B2E\",\r\n\t\t\"nro_cartao\": \"5166 9776 3421 8729\",\r\n\t\t\"codigo_seguranca_cartao\": 466,\r\n\t\t\"valor_credito\": \"$212.56\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0536D0D6-68C1-3B28-38E9-CE3F738F93A9\",\r\n\t\t\"nro_cartao\": \"348786444863224\",\r\n\t\t\"codigo_seguranca_cartao\": 319,\r\n\t\t\"valor_credito\": \"$558.74\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"81BC7DE7-B262-A9A7-75B6-E95C7DD21265\",\r\n\t\t\"nro_cartao\": \"305742557541462\",\r\n\t\t\"codigo_seguranca_cartao\": 235,\r\n\t\t\"valor_credito\": \"$213.37\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C662D5FC-2CE5-2197-AE44-CFFA8362BB76\",\r\n\t\t\"nro_cartao\": \"633418 217486 9339\",\r\n\t\t\"codigo_seguranca_cartao\": 474,\r\n\t\t\"valor_credito\": \"$564.36\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D8D59C3A-5052-C49F-C823-57A1B7315D95\",\r\n\t\t\"nro_cartao\": \"3457 572495 88442\",\r\n\t\t\"codigo_seguranca_cartao\": 893,\r\n\t\t\"valor_credito\": \"$24.15\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"BC671BB6-6182-22B6-3368-AEF98A585CC2\",\r\n\t\t\"nro_cartao\": \"490593373628163682\",\r\n\t\t\"codigo_seguranca_cartao\": 319,\r\n\t\t\"valor_credito\": \"$380.14\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"A811EB42-992E-39C5-1301-5E189A1FDB19\",\r\n\t\t\"nro_cartao\": \"491138564517585833\",\r\n\t\t\"codigo_seguranca_cartao\": 857,\r\n\t\t\"valor_credito\": \"$582.71\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DD50CC0D-A6EE-E6A1-6405-D02DF7FF3372\",\r\n\t\t\"nro_cartao\": \"453 21517 87578 830\",\r\n\t\t\"codigo_seguranca_cartao\": 772,\r\n\t\t\"valor_credito\": \"$557.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2A2E8477-3EEB-8DF2-C636-416453A190A7\",\r\n\t\t\"nro_cartao\": \"633483 18 6989 5677 839\",\r\n\t\t\"codigo_seguranca_cartao\": 180,\r\n\t\t\"valor_credito\": \"$40.67\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7EAC60B4-B884-271B-6155-B05367D61C3A\",\r\n\t\t\"nro_cartao\": \"601144 769546 6737\",\r\n\t\t\"codigo_seguranca_cartao\": 743,\r\n\t\t\"valor_credito\": \"$411.94\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"18682935-8072-4CDD-EB7A-27C195DEFBB2\",\r\n\t\t\"nro_cartao\": \"3625 827342 39444\",\r\n\t\t\"codigo_seguranca_cartao\": 921,\r\n\t\t\"valor_credito\": \"$71.14\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"79382803-417D-9DA3-CACB-BEC16281B120\",\r\n\t\t\"nro_cartao\": \"2149 555586 35386\",\r\n\t\t\"codigo_seguranca_cartao\": 772,\r\n\t\t\"valor_credito\": \"$562.73\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"1F369FD8-9187-BD92-6E9E-7415CE87862F\",\r\n\t\t\"nro_cartao\": \"377882588639464\",\r\n\t\t\"codigo_seguranca_cartao\": 308,\r\n\t\t\"valor_credito\": \"$533.83\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B44363EE-6732-5EDC-C32A-1C5C61172071\",\r\n\t\t\"nro_cartao\": \"6334 7667 7314 8838\",\r\n\t\t\"codigo_seguranca_cartao\": 619,\r\n\t\t\"valor_credito\": \"$52.20\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"C41B6ACF-D3CA-95FD-3688-416022FA118C\",\r\n\t\t\"nro_cartao\": \"633 47283 33662 591\",\r\n\t\t\"codigo_seguranca_cartao\": 407,\r\n\t\t\"valor_credito\": \"$43.30\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DA2E4547-79C6-248F-6725-E701AF6EAD6C\",\r\n\t\t\"nro_cartao\": \"377474754597971\",\r\n\t\t\"codigo_seguranca_cartao\": 526,\r\n\t\t\"valor_credito\": \"$279.69\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7C30422A-7D25-41DF-43D2-38C38B7A9A7D\",\r\n\t\t\"nro_cartao\": \"3734 599576 51372\",\r\n\t\t\"codigo_seguranca_cartao\": 997,\r\n\t\t\"valor_credito\": \"$395.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B770887E-5D6B-6035-1E81-46B755962715\",\r\n\t\t\"nro_cartao\": \"670696773623687747\",\r\n\t\t\"codigo_seguranca_cartao\": 303,\r\n\t\t\"valor_credito\": \"$220.26\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"42334BDD-E1CF-C3DF-985D-BAF91535AE8B\",\r\n\t\t\"nro_cartao\": \"484 48127 46363 324\",\r\n\t\t\"codigo_seguranca_cartao\": 866,\r\n\t\t\"valor_credito\": \"$228.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"85672E7C-ED8A-74B3-DB7A-59BE8AA1D631\",\r\n\t\t\"nro_cartao\": \"367723656162785\",\r\n\t\t\"codigo_seguranca_cartao\": 855,\r\n\t\t\"valor_credito\": \"$563.25\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3BE07598-7785-EBC7-D77A-DBCC47E19E6A\",\r\n\t\t\"nro_cartao\": \"3034 322494 77786\",\r\n\t\t\"codigo_seguranca_cartao\": 114,\r\n\t\t\"valor_credito\": \"$297.72\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B05744CC-EE63-BCA2-44D6-7C547EFB292F\",\r\n\t\t\"nro_cartao\": \"4024007124154898\",\r\n\t\t\"codigo_seguranca_cartao\": 617,\r\n\t\t\"valor_credito\": \"$224.35\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"15A61DA6-A8AC-AA82-32AE-924572A9D799\",\r\n\t\t\"nro_cartao\": \"372397284327582\",\r\n\t\t\"codigo_seguranca_cartao\": 894,\r\n\t\t\"valor_credito\": \"$491.39\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"F1D11F8A-4C03-6A99-82E1-58D8A329C826\",\r\n\t\t\"nro_cartao\": \"4175 0084 9335 7424\",\r\n\t\t\"codigo_seguranca_cartao\": 728,\r\n\t\t\"valor_credito\": \"$438.80\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"B7519D77-CB4C-4C37-E30E-F95C2527F7D6\",\r\n\t\t\"nro_cartao\": \"532463 451489 2359\",\r\n\t\t\"codigo_seguranca_cartao\": 971,\r\n\t\t\"valor_credito\": \"$583.16\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"E5479E03-5B34-0C34-45D2-D7ACDABCDA7D\",\r\n\t\t\"nro_cartao\": \"6334594683132249550\",\r\n\t\t\"codigo_seguranca_cartao\": 198,\r\n\t\t\"valor_credito\": \"$16.52\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"751C45D4-3C8D-ED89-F39D-B698364A0EDA\",\r\n\t\t\"nro_cartao\": \"3659 851554 35218\",\r\n\t\t\"codigo_seguranca_cartao\": 880,\r\n\t\t\"valor_credito\": \"$462.47\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"0B7A6C65-C414-6815-541C-B3F294753467\",\r\n\t\t\"nro_cartao\": \"676322528994560\",\r\n\t\t\"codigo_seguranca_cartao\": 186,\r\n\t\t\"valor_credito\": \"$43.95\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"2E8B38E9-3BBF-88DE-0785-B428FE89510B\",\r\n\t\t\"nro_cartao\": \"676 39487 33854 271\",\r\n\t\t\"codigo_seguranca_cartao\": 903,\r\n\t\t\"valor_credito\": \"$225.34\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DA3C23BF-0FE4-B9F3-A49F-478CBAD9CBDC\",\r\n\t\t\"nro_cartao\": \"374465623434522\",\r\n\t\t\"codigo_seguranca_cartao\": 460,\r\n\t\t\"valor_credito\": \"$503.63\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"DEC465A7-86D2-49ED-45E4-1474D6FF420A\",\r\n\t\t\"nro_cartao\": \"2149 562168 82535\",\r\n\t\t\"codigo_seguranca_cartao\": 227,\r\n\t\t\"valor_credito\": \"$525.17\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"39638145-3377-DD26-9802-E1C912E38758\",\r\n\t\t\"nro_cartao\": \"676 77463 71427 483\",\r\n\t\t\"codigo_seguranca_cartao\": 723,\r\n\t\t\"valor_credito\": \"$341.18\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"7AD7F906-9135-D397-9B25-7B721032129E\",\r\n\t\t\"nro_cartao\": \"676 75232 42844 463\",\r\n\t\t\"codigo_seguranca_cartao\": 862,\r\n\t\t\"valor_credito\": \"$279.90\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"94E259EC-1082-65BE-842E-B6895A66E73B\",\r\n\t\t\"nro_cartao\": \"304174494398155\",\r\n\t\t\"codigo_seguranca_cartao\": 605,\r\n\t\t\"valor_credito\": \"$202.16\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"D9C4AC14-8486-E429-E360-1F390A13F590\",\r\n\t\t\"nro_cartao\": \"6488145741128665\",\r\n\t\t\"codigo_seguranca_cartao\": 943,\r\n\t\t\"valor_credito\": \"$487.80\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"3EC914C6-C724-1556-A04C-BEC8D8B1DE73\",\r\n\t\t\"nro_cartao\": \"549761 2537285869\",\r\n\t\t\"codigo_seguranca_cartao\": 969,\r\n\t\t\"valor_credito\": \"$159.54\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"5E921ECE-3132-1E69-414C-D45C0A28606F\",\r\n\t\t\"nro_cartao\": \"6474 4617 8539 5821\",\r\n\t\t\"codigo_seguranca_cartao\": 278,\r\n\t\t\"valor_credito\": \"$312.49\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"896D47E6-4187-0A20-1646-73D3A340FC72\",\r\n\t\t\"nro_cartao\": \"6763 1372 5338 1622\",\r\n\t\t\"codigo_seguranca_cartao\": 449,\r\n\t\t\"valor_credito\": \"$19.85\"\r\n\t},\r\n\t{\r\n\t\t\"id\": \"779D5FD2-618D-D3F2-9CC4-C55BA39E95ED\",\r\n\t\t\"nro_cartao\": \"302973616422252\",\r\n\t\t\"codigo_seguranca_cartao\": 680,\r\n\t\t\"valor_credito\": \"$193.73\"\r\n\t}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8070/cartao/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"cartao",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCredCards",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/cartao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"cartao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCredCards - LCL",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8070/cartao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"cartao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCredCardById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/cartao/549AC646-DD8D-2DB9-E888-D5B587976681",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"cartao",
+						"549AC646-DD8D-2DB9-E888-D5B587976681"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCredCardByFiltro",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/cartao/filtro?nroCartao=3016 296348 57850&cvv=553",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"cartao",
+						"filtro"
+					],
+					"query": [
+						{
+							"key": "nroCartao",
+							"value": "3016 296348 57850"
+						},
+						{
+							"key": "cvv",
+							"value": "553"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCredCardById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nro_cartao\" : \"3016 296348 57850\",\r\n    \"codigo_seguranca_cartao\" : 553,\r\n    \"valor_credito\": \"$1193.04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/cartao/549AC646-DD8D-2DB9-E888-D5B587976681",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"cartao",
+						"549AC646-DD8D-2DB9-E888-D5B587976681"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registra Pagamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nro_cartao\": \"3016 296348 57850\",\r\n    \"codigo_seguranca_cartao\": 553,\r\n    \"valor_compra\":150\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_bank_id}}/prod/pagamento/pagar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_bank_id}}",
+						"prod",
+						"pagamento",
+						"pagar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registra Pagamento - LCL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nro_cartao\": \"3016 296348 57850\",\r\n    \"codigo_seguranca_cartao\": 553,\r\n    \"valor_compra\":150\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8070/pagamento/pagar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8070",
+					"path": [
+						"pagamento",
+						"pagar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Efetuar a compra da passagem - cartão válido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_passagem\":1,\r\n    \"nro_cartao\" : \"3016 296348 57850\",\r\n    \"codigo_seguranca_cartao\" : 553,\r\n    \"valor_compra\":150\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_trip_id}}/prod/topicMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_trip_id}}",
+						"prod",
+						"topicMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Efetuar a compra da passagem - cartão válido - LCL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo_passagem\":1,\r\n    \"nro_cartao\" : \"3016 296348 57850\",\r\n    \"codigo_seguranca_cartao\" : 553,\r\n    \"valor_compra\":150\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibe Nome de Usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_feed_id}}/prod/feedback/meunome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_feed_id}}",
+						"prod",
+						"feedback",
+						"meunome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibe Nome de Usuário - LCL",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/feedback/meunome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"feedback",
+						"meunome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Compras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_feed_id}}/prod/feedback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_feed_id}}",
+						"prod",
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Compras - LCL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/feedback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir Status de uma Compra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4566/_aws/execute-api/{{api_feed_id}}/prod/feedback/bd1e0da3-20c5-4716-a09a-3fb7941e00a4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"_aws",
+						"execute-api",
+						"{{api_feed_id}}",
+						"prod",
+						"feedback",
+						"bd1e0da3-20c5-4716-a09a-3fb7941e00a4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir Status de uma Compra - LCL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/feedback/2f32c284-0a89-47e3-8107-ceecee291429",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"feedback",
+						"2f32c284-0a89-47e3-8107-ceecee291429"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_bank_id",
+			"value": "3ygf0at98x",
+			"type": "string"
+		},
+		{
+			"key": "api_feed_id",
+			"value": "faxqo7i7qk",
+			"type": "string"
+		},
+		{
+			"key": "api_trip_id",
+			"value": "1kalldwhc7",
+			"type": "string"
+		}
+	]
+}
