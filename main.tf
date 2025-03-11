@@ -499,3 +499,150 @@ resource "aws_lambda_event_source_mapping" "sqs_to_buyprocess_lambda_trigger" {
   maximum_batching_window_in_seconds = 1
   enabled          = true
 }
+
+# Criação do Lambda para Buyfeedback
+resource "aws_lambda_function" "ms-communication-buyfeedback_lambda" {
+  function_name    = "StreamLambdaHandlerFeedback"
+  handler          = "br.com.lduran.StreamLambdaHandlerFeedback::handleRequest"
+  runtime          = "java11"
+  memory_size      = 512
+  timeout          = 30
+  filename         = "ms-communication-buyfeedback/target/ms-communication-buyfeedback-0.0.1-SNAPSHOT-lambda-package.zip"
+  source_code_hash = filebase64sha256("ms-communication-buyfeedback/target/ms-communication-buyfeedback-0.0.1-SNAPSHOT-lambda-package.zip")
+  role             = aws_iam_role.lambda_execution_role.arn
+
+  environment {
+    variables = {
+      AWS_ENDPOINT_URL = "http://host.docker.internal:4566"
+    }
+  }
+}
+
+# Configuração da API para Buyfeedback
+resource "aws_api_gateway_rest_api" "ms-communication-buyfeedback_lambda_api" {
+  name        = "StreamLambdaHandlerFeedback"
+  description = "API Microsservice Buyfeedback"
+}
+
+# Root resource for /feedback
+resource "aws_api_gateway_resource" "feedback" {
+  rest_api_id = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  parent_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.root_resource_id
+  path_part   = "feedback"
+}
+
+# GET /feedback - List all trips
+resource "aws_api_gateway_method" "list_trips" {
+  rest_api_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id   = aws_api_gateway_resource.feedback.id
+  http_method   = "GET"
+  authorization = "NONE"
+}
+
+# Definindo a integração com o Lambda
+resource "aws_api_gateway_integration" "list_trips_integration" {
+  rest_api_id             = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id             = aws_api_gateway_resource.feedback.id
+  http_method             = aws_api_gateway_method.list_trips.http_method
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = aws_lambda_function.ms-communication-buyfeedback_lambda.invoke_arn
+}
+
+# Resource for /feedback/{id}
+resource "aws_api_gateway_resource" "feedback_id" {
+  rest_api_id = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  parent_id   = aws_api_gateway_resource.feedback.id
+  path_part   = "{id}"
+}
+
+# GET /feedback/{id} - Get a trip by ID
+resource "aws_api_gateway_method" "get_trip_by_id" {
+  rest_api_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id   = aws_api_gateway_resource.feedback_id.id
+  http_method   = "GET"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_integration" "get_trip_by_id_integration" {
+  rest_api_id             = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id             = aws_api_gateway_resource.feedback_id.id
+  http_method             = aws_api_gateway_method.get_trip_by_id.http_method
+  type                    = "AWS_PROXY"
+  integration_http_method = "POST"
+  uri                     = aws_lambda_function.ms-communication-buyfeedback_lambda.invoke_arn
+}
+
+# DELETE /feedback/{id} - Delete a trip
+resource "aws_api_gateway_method" "delete_trip" {
+  rest_api_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id   = aws_api_gateway_resource.feedback_id.id
+  http_method   = "DELETE"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_integration" "delete_trip_integration" {
+  rest_api_id             = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id             = aws_api_gateway_resource.feedback_id.id
+  http_method             = aws_api_gateway_method.delete_trip.http_method
+  type                    = "AWS_PROXY"
+  integration_http_method = "POST"
+  uri                     = aws_lambda_function.ms-communication-buyfeedback_lambda.invoke_arn
+}
+
+# Root resource for /feedback/meunome
+resource "aws_api_gateway_resource" "feedback_meunome" {
+  rest_api_id = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  parent_id   = aws_api_gateway_resource.feedback.id
+  path_part   = "meunome"
+}
+
+# POST /feedback/meunome - Create a new pagamento
+resource "aws_api_gateway_method" "consulta" {
+  rest_api_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id   = aws_api_gateway_resource.feedback_meunome.id
+  http_method   = "POST"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_integration" "consulta_integration" {
+  rest_api_id             = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  resource_id             = aws_api_gateway_resource.feedback_meunome.id
+  http_method             = aws_api_gateway_method.consulta.http_method
+  type                    = "AWS_PROXY"
+  integration_http_method = "POST"
+  uri                     = aws_lambda_function.ms-communication-buyfeedback_lambda.invoke_arn
+}
+
+# Criando o deployment
+resource "aws_api_gateway_deployment" "ms-communication-buyfeedback_lambda_api_deployment" {
+  depends_on  = [
+    aws_api_gateway_integration.list_trips_integration,
+    aws_api_gateway_integration.get_trip_by_id_integration,
+    aws_api_gateway_integration.delete_cartoes_integration,
+    aws_api_gateway_integration.consulta_integration
+  ]
+  rest_api_id = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+}
+
+# Criação do trigger SQS para a Lambda Buyfeedback
+resource "aws_lambda_event_source_mapping" "sqs_to_buyfeedback_lambda_trigger" {
+  event_source_arn = "arn:aws:sqs:sa-east-1:000000000000:sqs_passagens"
+  function_name    = aws_lambda_function.ms-communication-buyfeedback_lambda.arn
+  batch_size       = 1
+  enabled          = true
+}
+
+resource "aws_api_gateway_stage" "prod_stage_buyfeedback" {
+  deployment_id = aws_api_gateway_deployment.ms-communication-buyfeedback_lambda_api_deployment.id
+  rest_api_id   = aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.id
+  stage_name    = "prod"
+}
+
+resource "aws_lambda_permission" "apigw_invoke_buyfeedback" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.ms-communication-buyfeedback_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.ms-communication-buyfeedback_lambda_api.execution_arn}/*/*"
+}

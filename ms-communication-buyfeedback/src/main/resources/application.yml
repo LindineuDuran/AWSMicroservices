@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ms-communication-buyfeedback
+---
+spring:
+  config:
+    activate:
+      on-profile: localstack
+  cloud:
+    aws:
+      region:
+        static: sa-east-1
+      credentials:
+        access-key: test
+        secret-key: test
+      skip_credentials_validation: true
+      skip_metadata_api_check:     true
+      skip_requesting_account_id:  true
+      endpoint: http://localhost:4566
+      sqs:
+        enabled: true
+        endpoint: http://localhost:4566
+      sns:
+        enabled: true
+        endpoint: http://localhost:4566
