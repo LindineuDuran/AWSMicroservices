@@ -473,3 +473,29 @@ resource "aws_lambda_permission" "apigw_invoke_buytrip" {
   #source_arn    = "${aws_api_gateway_rest_api.ms-communication-buytrip_lambda_api.execution_arn}/*/*"
   source_arn = "${aws_api_gateway_rest_api.ms-communication-buytrip_lambda_api.execution_arn}/*"
 }
+
+# Criação do Lambda para Buyprocess
+resource "aws_lambda_function" "ms-communication-buyprocess_lambda" {
+  function_name = "StreamLambdaHandlerProcess"
+  handler       = "br.com.lduran.StreamLambdaHandlerProcess::handleRequest"
+  runtime       = "java11"
+  memory_size   = 512
+  timeout       = 30
+  filename      = "ms-communication-buyprocess/target/ms-communication-buyprocess-0.0.1-SNAPSHOT-lambda-package.zip"
+  role          = aws_iam_role.lambda_execution_role.arn
+
+  environment {
+    variables = {
+      AWS_ENDPOINT_URL = "http://host.docker.internal:4566"
+    }
+  }
+}
+
+# Criação do trigger SQS para a Lambda Buyprocess
+resource "aws_lambda_event_source_mapping" "sqs_to_buyprocess_lambda_trigger" {
+  event_source_arn = "arn:aws:sqs:sa-east-1:000000000000:sqs_passagens"
+  function_name    = aws_lambda_function.ms-communication-buyprocess_lambda.arn
+  batch_size       = 1
+  maximum_batching_window_in_seconds = 1
+  enabled          = true
+}
